@@ -1,6 +1,8 @@
 import { defineNuxtConfig, type NuxtConfig } from 'nuxt';
 
 const config: NuxtConfig = {
+	modules: [['./src/modules/netlify-files', { filesDirectory: '.' }]],
+
 	srcDir: 'src',
 	target: 'static',
 
