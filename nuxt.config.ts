@@ -1,8 +1,10 @@
 import { defineNuxtConfig, type NuxtConfig } from 'nuxt';
 
 const config: NuxtConfig = {
-	// Maybe fixed with nuxt public dir?
-	// modules: [['./src/modules/netlify-files', { filesDirectory: '.' }]],
+	typescript: {
+		shim: false,
+		typeCheck: true
+	},
 
 	srcDir: 'src',
 	target: 'static',
