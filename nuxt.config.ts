@@ -1,8 +1,13 @@
 import { defineNuxtConfig, type NuxtConfig } from 'nuxt';
 
 const isDev = process.env.NODE_ENV === 'development';
+const wakaTimeKey = process.env.WAKATIME_KEY;
+
+const LANYARD_WEBSOCKET_URL = 'wss://api.lanyard.rest/socket';
 
 const config: NuxtConfig = {
+	modules: ['@pinia/nuxt', '@vueuse/nuxt'],
+
 	typescript: {
 		shim: false,
 		typeCheck: true
@@ -19,7 +24,7 @@ const config: NuxtConfig = {
   */
 	ssr: !isDev,
 
-	css: ['~/assets/css/fonts.css', '~/assets/css/tailwind.css'],
+	css: ['~/assets/css/fonts.css', '~/assets/css/tailwind.css', '~/assets/css/global.css', '~/assets/css/tooltip.css'],
 	build: {
 		postcss: {
 			postcssOptions: {
@@ -28,6 +33,17 @@ const config: NuxtConfig = {
 					autoprefixer: {}
 				}
 			}
+		}
+	},
+
+	runtimeConfig: {
+		app: {
+			wakaTimeKey
+		},
+		public: {
+			discordId: '290131759159443457',
+			lanyardWebsocketUrl: LANYARD_WEBSOCKET_URL,
+			wakaTimeUser: 'leonard'
 		}
 	}
 };
