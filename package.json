@@ -29,7 +29,7 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
-		"nuxt": "3.0.0-rc.4",
+		"nuxt": "3.0.0-rc.5",
 		"postcss": "^8.4.14",
 		"prettier": "^2.7.1",
 		"pretty-quick": "^3.1.3",
