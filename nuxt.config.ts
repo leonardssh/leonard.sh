@@ -1,9 +1,8 @@
 import { defineNuxtConfig, type NuxtConfig } from 'nuxt';
 
 const isDev = process.env.NODE_ENV === 'development';
-const wakaTimeKey = process.env.WAKATIME_KEY;
 
-const LANYARD_WEBSOCKET_URL = 'wss://api.lanyard.rest/socket';
+const { WAKATIME_KEY, LANYARD_WEBSOCKET_URL } = process.env;
 
 const config: NuxtConfig = {
 	modules: ['@pinia/nuxt', '@vueuse/nuxt'],
@@ -38,7 +37,7 @@ const config: NuxtConfig = {
 
 	runtimeConfig: {
 		app: {
-			wakaTimeKey
+			wakaTimeKey: WAKATIME_KEY
 		},
 		public: {
 			discordId: '290131759159443457',
