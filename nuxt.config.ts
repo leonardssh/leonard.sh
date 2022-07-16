@@ -43,7 +43,8 @@ const config: NuxtConfig = {
 		public: {
 			discordId: '290131759159443457',
 			lanyardWebsocketUrl: LANYARD_WEBSOCKET_URL,
-			wakaTimeUser: 'leonard'
+			wakaTimeUser: 'leonard',
+			location: 'Rotterdam — South Holland, The Netherlands'
 		}
 	}
 };

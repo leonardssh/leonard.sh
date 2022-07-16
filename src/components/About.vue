@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import { useLanyardStore } from '~/stores/lanyard';
+
+const store = useLanyardStore();
+const { public: config } = useRuntimeConfig();
+
+const location = computed(() => store.kv.location ?? config.location);
+</script>
+
 <template>
 	<div>
 		<h4 class="pt-10 pb-2 text-base font-medium text-slate-400 font-inter">About</h4>
@@ -5,7 +14,12 @@
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 			minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		</p>
-		<div class="flex gap-2 mt-5 text-slate-400">
+		<a
+			:href="`https://www.google.com/maps/search/${encodeURIComponent(location)}`"
+			target="_blank"
+			rel="noreferrer"
+			class="flex gap-2 mt-5 hover:text-slate-300 text-slate-400"
+		>
 			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 				<path
 					stroke-linecap="round"
@@ -14,7 +28,7 @@
 				></path>
 				<path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
 			</svg>
-			<p class="font-inter">Rotterdam — South Holland, The Netherlands</p>
-		</div>
+			<span class="font-inter">{{ location }}</span>
+		</a>
 	</div>
 </template>

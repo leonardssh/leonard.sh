@@ -15,6 +15,10 @@ export interface LanyardError {
 	code: string;
 }
 
+export interface LanyardKV {
+	location: string;
+}
+
 export interface LanyardData {
 	spotify: Spotify | null;
 	listening_to_spotify: boolean;
@@ -23,6 +27,7 @@ export interface LanyardData {
 	activities: Activity[];
 	active_on_discord_mobile: boolean;
 	active_on_discord_desktop: boolean;
+	kv: LanyardKV;
 }
 
 export interface Spotify {
