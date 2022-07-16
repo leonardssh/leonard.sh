@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useLanyardStore } from '~/stores/lanyard';
 
-import Spotify from '../lanyard/Spotify.vue';
-import VSCode from '../lanyard/VSCode.vue';
+import Spotify from './lanyard/Spotify.vue';
+import VSCode from './lanyard/VSCode.vue';
 
 const store = useLanyardStore();
 </script>
@@ -13,5 +13,3 @@ const store = useLanyardStore();
 		<Spotify v-if="store.spotify" :data="store.spotify" />
 	</div>
 </template>
-
-<style lang="scss" scoped></style>
