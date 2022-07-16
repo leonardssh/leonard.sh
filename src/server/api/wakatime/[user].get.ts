@@ -1,6 +1,36 @@
+import { WakaTimeLanguage, WakaTimeResponse } from '~/types/wakatime';
+
+const CACHE_FOR = 1_000 * 60 * 30; // cache for 30 minutes
+
+let cache: WakaTimeResponse = {} as WakaTimeResponse;
+let cacheTime = Number(new Date());
+
+const getWakaTimeDataFromAPI = async (user: string, token: string): Promise<WakaTimeResponse> => {
+	const response = await fetch(`https://wakatime.com/api/v1/users/${user}/stats/last_7_days?token=${token}`);
+	const data = await response.json();
+	return data;
+};
+
+const getWakaTimeData = async (user: string, token: string): Promise<WakaTimeLanguage> => {
+	const currentTime = Number(new Date());
+
+	// initial cache setup
+	if (!Object.keys(cache).length) {
+		cache = await getWakaTimeDataFromAPI(user, token);
+		cacheTime = currentTime + CACHE_FOR;
+	}
+
+	if (currentTime > cacheTime) {
+		cache = await getWakaTimeDataFromAPI(user, token);
+		cacheTime = currentTime + CACHE_FOR;
+	}
+
+	return cache['data']['languages'] as unknown as WakaTimeLanguage;
+};
+
 export default defineEventHandler(async ({ context }) => {
 	const { user } = context.params;
 	const { app } = useRuntimeConfig();
 
-	return fetch(`https://wakatime.com/api/v1/users/${user}/stats/last_7_days?token=${app.wakaTimeKey}`).then((res) => res.json());
+	return getWakaTimeData(user, app.wakaTimeKey);
 });
