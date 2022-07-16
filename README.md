@@ -11,3 +11,10 @@ This is the [Nuxt3](https://v3.nuxtjs.org/) app that runs on [leonard.sh](https:
 -   [TailwindCSS](https://tailwindcss.com/)
 -   [Lanyard](https://github.com/Phineas/lanyard/)
 -   [Netlify](https://www.netlify.com/)
+
+### 🤔 Inspiration
+
+Inspired and based on ideas from the following portfolios:
+- [heysen.fr](https://www.heysen.fr/)
+- [phineas.io](https://phineas.io/)
+- [igalaxy.dev](https://igalaxy.dev/)
