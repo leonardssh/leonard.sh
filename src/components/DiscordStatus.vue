@@ -3,18 +3,14 @@ import { useLanyardStore } from '~/stores/lanyard';
 
 const store = useLanyardStore();
 
-const color = computed(() => {
-	switch (store.status) {
-		case 'idle':
-			return 'bg-yellow-400';
-		case 'online':
-			return 'bg-green-400';
-		case 'dnd':
-			return 'bg-red-400';
-		case 'offline':
-			return 'bg-slate-400';
-	}
-});
+const colorObject = {
+	idle: 'bg-yellow-400',
+	online: 'bg-green-400',
+	dnd: 'bg-red-400',
+	offline: 'bg-slate-400'
+};
+
+const color = computed(() => colorObject[store.status]);
 </script>
 
 <template>
