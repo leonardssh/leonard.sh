@@ -30,14 +30,16 @@ export const useLanyard = (): Ref<LanyardData> => {
 		}
 	};
 
-	useWebSocket(lanyardWebsocketUrl, {
-		heartbeat: {
-			interval: 30 * 1_000,
-			message: JSON.stringify({ op: 3 })
-		},
-		onConnected,
-		onMessage
-	});
+	if (process.client) {
+		useWebSocket(lanyardWebsocketUrl, {
+			heartbeat: {
+				interval: 30 * 1_000,
+				message: JSON.stringify({ op: 3 })
+			},
+			onConnected,
+			onMessage
+		});
+	}
 
 	return activity;
 };
