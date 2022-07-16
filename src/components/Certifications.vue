@@ -8,7 +8,7 @@ const certifications = await $fetch('/api/certifications');
 		<div class="grid grid-cols-1 gap-4">
 			<div v-for="({ area, issuingBy, issueDate, expirationDate }, key) in certifications" :key="key">
 				<h4 class="text-lg font-medium font-inter">{{ area }}</h4>
-				<a class="pb-4 text-sm font-medium text-slate-700 font-dm-sans" :href="issuingBy.url">{{ issuingBy.name }}</a>
+				<a class="pb-4 text-sm font-medium text-slate-700 font-dm-sans" target="_blank" :href="issuingBy.url">{{ issuingBy.name }}</a>
 				<p class="text-sm font-normal text-slate-500 font-dm-sans">
 					Issued {{ new Date(`${issueDate.month}-1-${issueDate.year}`).toLocaleString('en-US', { month: 'short', year: 'numeric' }) }} -
 					{{ expirationDate ? expirationDate.month + ' ' + expirationDate.year : 'Present' }}
