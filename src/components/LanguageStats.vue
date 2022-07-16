@@ -18,6 +18,7 @@ const isValidLanguage = computed(() => languages.includes(language.wakatime));
 
 useTippy(languageRef, {
 	followCursor: true,
+	animation: false,
 	content: isValidLanguage.value && lang?.text ? `${lang?.text} past week` : null
 });
 </script>

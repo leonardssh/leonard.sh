@@ -5,6 +5,7 @@ const meRef = ref(null);
 
 useTippy(meRef, {
 	followCursor: true,
+	animation: false,
 	content: 'Hey, this is me!'
 });
 </script>
