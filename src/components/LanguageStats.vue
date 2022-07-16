@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { GroupMember } from '~/types/groups';
-
 import { useTippy } from 'vue-tippy';
-import { WakaTimeResponse } from '~/types/wakatime';
+
+import { WakaTimeLanguage } from '~/types/wakatime';
+import { Language } from '~/types/language';
 
 interface Props {
-	language: GroupMember;
-	wakatime: WakaTimeResponse['data']['languages'];
+	language: Language;
+	wakatime: WakaTimeLanguage[];
 }
 
 const { language, wakatime } = defineProps<Props>();

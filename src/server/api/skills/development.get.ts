@@ -1,8 +1,8 @@
-import { GroupMember } from '~/types/groups';
+import { Language } from '~~/src/types/language';
 
-const groups = new Map<number, GroupMember[]>();
+const languages = new Map<number, Language[]>();
 
-groups.set(1, [
+languages.set(1, [
 	{
 		name: 'HTML5',
 		wakatime: 'HTML'
@@ -13,7 +13,7 @@ groups.set(1, [
 	}
 ]);
 
-groups.set(2, [
+languages.set(2, [
 	{
 		name: 'JavaScript (ES6)',
 		wakatime: 'JavaScript'
@@ -24,13 +24,13 @@ groups.set(2, [
 	}
 ]);
 
-groups.set(3, [
+languages.set(3, [
 	{
 		name: 'Node.js'
 	}
 ]);
 
-groups.set(4, [
+languages.set(4, [
 	{
 		name: 'Vue',
 		wakatime: 'Vue.js'
@@ -40,7 +40,7 @@ groups.set(4, [
 	}
 ]);
 
-groups.set(5, [
+languages.set(5, [
 	{
 		name: 'React'
 	},
@@ -49,7 +49,7 @@ groups.set(5, [
 	}
 ]);
 
-groups.set(6, [
+languages.set(6, [
 	{
 		name: 'Angular'
 	},
@@ -58,7 +58,7 @@ groups.set(6, [
 	}
 ]);
 
-groups.set(7, [
+languages.set(7, [
 	{
 		name: 'TailwindCSS'
 	},
@@ -68,7 +68,7 @@ groups.set(7, [
 	}
 ]);
 
-groups.set(8, [
+languages.set(8, [
 	{
 		name: 'MySQL',
 		wakatime: 'SQL'
@@ -78,7 +78,7 @@ groups.set(8, [
 	}
 ]);
 
-groups.set(9, [
+languages.set(9, [
 	{
 		name: 'GraphQL',
 		wakatime: 'GraphQL'
@@ -90,5 +90,5 @@ groups.set(9, [
 
 export default defineEventHandler(() => ({
 	title: 'Development Skills',
-	skills: [...groups.values()]
+	languages: [...languages.values()]
 }));
