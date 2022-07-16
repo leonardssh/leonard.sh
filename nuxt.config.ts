@@ -2,7 +2,8 @@ import { defineNuxtConfig, type NuxtConfig } from 'nuxt';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const { WAKATIME_KEY, LANYARD_WEBSOCKET_URL } = process.env;
+const { WAKATIME_KEY } = process.env;
+const LANYARD_WEBSOCKET_URL = 'wss://api.lanyard.rest/socket';
 
 const config: NuxtConfig = {
 	modules: ['@pinia/nuxt', '@vueuse/nuxt'],
