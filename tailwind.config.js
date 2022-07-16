@@ -10,7 +10,6 @@ module.exports = {
 				inter: ['Inter', ...defaultTheme.fontFamily.sans],
 				karla: ['Karla', ...defaultTheme.fontFamily.sans],
 				inconsolata: ['Inconsolata', ...defaultTheme.fontFamily.mono],
-				'monument-extended': ['Monument Extended', ...defaultTheme.fontFamily.sans],
 				'dm-sans': ['DM Sans', ...defaultTheme.fontFamily.sans]
 			}
 		}
