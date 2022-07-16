@@ -42,6 +42,7 @@ tryOnUnmounted(() => {
 
 <template>
 	<div ref="vscodeRef" class="w-[calc(100%+2rem)] text-white rounded-xl cursor-pointer overflow-auto font-karla">
+		<h5 class="mb-1 font-semibold">Doing something</h5>
 		<div class="flex flex-row items-center">
 			<div class="relative h-16" v-if="data.assets">
 				<img
