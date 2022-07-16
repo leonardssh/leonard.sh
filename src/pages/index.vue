@@ -12,17 +12,17 @@ watch(lanyard, () => {
 </script>
 
 <template>
-	<LeftSide>
+	<Side layout="left">
 		<Me />
 		<Experience />
 		<Education />
 		<Certifications />
-	</LeftSide>
+	</Side>
 
-	<RightSide>
+	<Side layout="right">
 		<About />
 		<Skills />
 		<Doing />
 		<MadeWithTailwind />
-	</RightSide>
+	</Side>
 </template>
