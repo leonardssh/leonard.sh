@@ -8,7 +8,7 @@ const store = useLanyardStore();
 </script>
 
 <template>
-	<div class="flex flex-col max-w-full sm:w-full lg:w-fit xl:w-fit 2xl:w-full sm:flex-row lg:flex-col xl:flex-col 2xl:flex-row">
+	<div class="flex flex-col max-w-full min-w-fit sm:w-full lg:w-fit xl:w-fit 2xl:w-full sm:flex-row lg:flex-col xl:flex-col 2xl:flex-row">
 		<VSCode
 			v-if="store.activity"
 			:data="store.activity"
