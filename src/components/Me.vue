@@ -15,15 +15,18 @@ useTippy(meRef, {
 		<div
 			v-motion-roll-visible-left
 			ref="meRef"
-			class="relative m-auto lg:m-0 flex bg-[url('/images/me.png')] bg-cover bg-center bg-no-repeat rounded-full w-20 h-20 shadow-lg shadow-blue-300"
+			class="relative m-0 lg:m-0 flex bg-[url('/images/me.png')] bg-cover bg-center bg-no-repeat rounded-full w-20 h-20 shadow-lg shadow-blue-300"
 		>
 			<div class="absolute bottom-0 right-0">
 				<DiscordStatus />
 			</div>
 		</div>
-		<div v-motion-slide-visible-bottom class="flex flex-col items-start justify-center ml-6">
-			<h1 class="m-auto mt-6 text-3xl font-bold font-inter slide-top lg:m-0">Narcis B.</h1>
-			<h2 class="m-auto text-lg font-medium font-inter text-slate-500 slide-top lg:m-0">Full Stack Web Developer</h2>
+		<div v-motion-slide-visible-bottom class="flex flex-col items-center justify-between w-[calc(100%-5rem)] ml-6 lg:flex-row">
+			<div class="flex flex-col items-start justify-center">
+				<h1 class="m-auto mt-6 text-3xl font-bold font-inter slide-top lg:m-0">Narcis B.</h1>
+				<h2 class="m-auto text-lg font-medium font-inter text-slate-500 slide-top lg:m-0">Full Stack Web Developer</h2>
+			</div>
+			<Socials />
 		</div>
 	</div>
 </template>

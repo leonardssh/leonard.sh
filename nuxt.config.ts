@@ -6,7 +6,7 @@ const { WAKATIME_KEY } = process.env;
 const LANYARD_WEBSOCKET_URL = 'wss://api.lanyard.rest/socket';
 
 const config: NuxtConfig = {
-	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@vueuse/motion/nuxt'],
+	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@vueuse/motion/nuxt', 'nuxt-icons'],
 
 	typescript: {
 		shim: false,
