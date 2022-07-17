@@ -1,5 +1,3 @@
-import { DiscordStatus } from '../types/lanyard';
-
 const getElapsedTime = (timestamp: number) => {
 	const startTime = timestamp;
 	const endTime = Number(new Date());
