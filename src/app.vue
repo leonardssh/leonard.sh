@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col overflow-x-hidden lg:flex-row bg-effect">
+	<div class="flex flex-col overflow-hidden lg:flex-row bg-effect">
 		<NuxtPage />
 	</div>
 </template>
