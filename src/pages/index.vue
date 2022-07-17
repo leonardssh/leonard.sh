@@ -14,14 +14,14 @@ watch(lanyard, () => {
 </script>
 
 <template>
-	<Side layout="left">
+	<Side v-motion-slide-visible-bottom layout="left">
 		<Me />
 		<Experience />
 		<Education />
 		<Certifications />
 	</Side>
 
-	<Side layout="right">
+	<Side v-motion-slide-visible-right layout="right">
 		<About />
 		<Skills />
 		<Doing />

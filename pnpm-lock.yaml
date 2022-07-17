@@ -9,6 +9,7 @@ specifiers:
     '@typescript-eslint/eslint-plugin': ^5.30.6
     '@typescript-eslint/parser': ^5.30.6
     '@vueuse/core': ^8.9.3
+    '@vueuse/motion': 2.0.0-beta.18
     '@vueuse/nuxt': ^8.9.3
     autoprefixer: ^10.4.7
     cz-conventional-changelog: ^3.3.0
@@ -46,6 +47,7 @@ devDependencies:
     '@typescript-eslint/eslint-plugin': 5.30.6_2vt5mtrqleafs33qg2bhpmbaqm
     '@typescript-eslint/parser': 5.30.6_4x5o4skxv6sl53vpwefgt23khm
     '@vueuse/core': 8.9.3_vue@3.2.37
+    '@vueuse/motion': 2.0.0-beta.18_vue@3.2.37
     '@vueuse/nuxt': 8.9.3_vue@3.2.37
     autoprefixer: 10.4.7_postcss@8.4.14
     cz-conventional-changelog: 3.3.0
@@ -1407,6 +1409,26 @@ packages:
         resolution: { integrity: sha512-57gZZKtWAmcJaUBmciCohvmumVLz4+FnoVnWj7U5BWs5PC2/7gU9Z0/i1i9leDNeboAauFzAq7z1GjS8eYnT+w== }
         dev: true
 
+    /@vueuse/motion/2.0.0-beta.18_vue@3.2.37:
+        resolution: { integrity: sha512-mPeXxuqZp13lqpcb+345TnEP7tEOjC/wTkwf8be1Obzt3913lPpZPXgwKafMoocKRNOnMZye8Y6PqQOEKztk9A== }
+        peerDependencies:
+            '@nuxt/kit': npm:@nuxt/kit-edge@latest
+            '@vue/composition-api': ^1.4.1
+            vue: ^2.0.0 || >=3.0.0-rc.0
+        peerDependenciesMeta:
+            '@vue/composition-api':
+                optional: true
+        dependencies:
+            '@vueuse/core': 8.9.3_vue@3.2.37
+            '@vueuse/shared': 8.9.3_vue@3.2.37
+            csstype: 3.1.0
+            framesync: 6.1.0
+            popmotion: 11.0.3
+            style-value-types: 5.1.0
+            vue: 3.2.37
+            vue-demi: 0.13.4_vue@3.2.37
+        dev: true
+
     /@vueuse/nuxt/8.9.3_vue@3.2.37:
         resolution: { integrity: sha512-bjjt/WaHm/iIyZjUcmqEUGP8OK+rLwppyVhxBNVeV/FRH+tSn745iN/3iyTYJUILKl/KazLtDrK6sunhSm6CZA== }
         dependencies:
@@ -2283,6 +2305,10 @@ packages:
 
     /csstype/2.6.20:
         resolution: { integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA== }
+
+    /csstype/3.1.0:
+        resolution: { integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA== }
+        dev: true
 
     /cuint/0.2.2:
         resolution: { integrity: sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw== }
@@ -3231,6 +3257,18 @@ packages:
         resolution: { integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA== }
         dev: true
 
+    /framesync/6.0.1:
+        resolution: { integrity: sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA== }
+        dependencies:
+            tslib: 2.4.0
+        dev: true
+
+    /framesync/6.1.0:
+        resolution: { integrity: sha512-aBX+hdWAvwiJYeQlFLY2533VxeL6OEu71CAgV4GGKksrj6+dE6i7K86WSSiRBEARCoJn5bFqffhg4l07eA27tg== }
+        dependencies:
+            tslib: 2.4.0
+        dev: true
+
     /fresh/0.5.2:
         resolution: { integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q== }
         engines: { node: '>= 0.6' }
@@ -3526,6 +3564,10 @@ packages:
 
     /hash-sum/2.0.0:
         resolution: { integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg== }
+
+    /hey-listen/1.0.8:
+        resolution: { integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q== }
+        dev: true
 
     /homedir-polyfill/1.0.3:
         resolution: { integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA== }
@@ -4932,6 +4974,15 @@ packages:
             mlly: 0.5.4
             pathe: 0.3.2
 
+    /popmotion/11.0.3:
+        resolution: { integrity: sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA== }
+        dependencies:
+            framesync: 6.0.1
+            hey-listen: 1.0.8
+            style-value-types: 5.0.0
+            tslib: 2.4.0
+        dev: true
+
     /postcss-calc/8.2.4_postcss@8.4.14:
         resolution: { integrity: sha512-SmWMSJmB8MRnnULldx0lQIyhSNvuDl9HfrZkaqqE/WHAhToYsAvDq+yAsA/kIyINDszOp3Rh0GFoNuH5Ypsm3Q== }
         peerDependencies:
@@ -5989,6 +6040,20 @@ packages:
         resolution: { integrity: sha512-ql/sBDoJOybTKSIOWrrh8kgUEMjXMwRAkZTD0EwiwxQH/6tTPkZvMIEjp0CRlpi6V5FMiJyvxeRkEi1KrGISoA== }
         dependencies:
             acorn: 8.7.1
+
+    /style-value-types/5.0.0:
+        resolution: { integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA== }
+        dependencies:
+            hey-listen: 1.0.8
+            tslib: 2.4.0
+        dev: true
+
+    /style-value-types/5.1.0:
+        resolution: { integrity: sha512-DRIfBtjxQ4ztBZpexkFcI+UR7pODC5qLMf2Syt+bH98PAHHRH2tQnzxBuDQlqcAoYar6GzWnj8iAfqfwnEzCiQ== }
+        dependencies:
+            hey-listen: 1.0.8
+            tslib: 2.4.0
+        dev: true
 
     /stylehacks/5.1.0_postcss@8.4.14:
         resolution: { integrity: sha512-SzLmvHQTrIWfSgljkQCw2++C9+Ne91d/6Sp92I8c5uHTcy/PgeHamwITIbBW9wnFTY/3ZfSXR9HIL6Ikqmcu6Q== }
