@@ -11,7 +11,13 @@ const getWakaTimeDataFromAPI = async (user: string, token: string): Promise<Waka
 	return data;
 };
 
-const getWakaTimeData = async (user: string, token: string): Promise<WakaTimeLanguage> => {
+const getWakaTimeData = async (user: string, token: string, skipCache?: boolean): Promise<WakaTimeLanguage[]> => {
+	// Skip cache if development mode is enabled
+	if (skipCache) {
+		const response = await getWakaTimeDataFromAPI(user, token);
+		return response['data']['languages'];
+	}
+
 	const currentTime = Number(new Date());
 
 	// initial cache setup
@@ -25,12 +31,15 @@ const getWakaTimeData = async (user: string, token: string): Promise<WakaTimeLan
 		cacheTime = currentTime + CACHE_FOR;
 	}
 
-	return cache['data']['languages'] as unknown as WakaTimeLanguage;
+	return cache['data']['languages'];
 };
 
 export default defineEventHandler(async ({ context }) => {
 	const { user } = context.params;
-	const { app } = useRuntimeConfig();
+	const {
+		app,
+		public: { devMode }
+	} = useRuntimeConfig();
 
-	return getWakaTimeData(user, app.wakaTimeKey);
+	return getWakaTimeData(user, app.wakaTimeKey, devMode);
 });
