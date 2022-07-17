@@ -14,17 +14,17 @@ const languageRef = ref<Element | null>(null);
 const languages = useWakaTimeLanguages();
 const lang = useLanguageFromWakaTimeStats(wakatime, language.wakatime);
 
-const isValidLanguage = computed(() => languages.includes(language.wakatime));
+const isValidLanguage = computed(() => languages.includes(language.wakatime) && lang && lang.text && lang.total_seconds > 15);
 
 useTippy(languageRef, {
 	followCursor: true,
 	animation: false,
-	content: isValidLanguage.value && lang?.text ? `${lang?.text} past week` : null
+	content: unref(isValidLanguage) ? `${lang.text} past week` : null
 });
 </script>
 
 <template>
-	<span ref="languageRef" :class="{ 'border-b pb-[0.5px] border-dotted': isValidLanguage && lang?.minutes > 0 }">
+	<span ref="languageRef" :class="{ 'border-b pb-[0.5px] border-dotted': isValidLanguage }">
 		{{ language.name }}
 	</span>
 </template>
