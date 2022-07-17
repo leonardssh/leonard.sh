@@ -1,11 +1,5 @@
 <script lang="ts" setup>
-import { useTippy } from 'vue-tippy';
-
-const meRef = ref(null);
-
-useTippy(meRef, {
-	followCursor: true,
-	animation: false,
+const { elementRef: meRef } = useTooltip({
 	content: 'Hey, this is me!'
 });
 </script>

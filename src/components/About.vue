@@ -1,14 +1,9 @@
 <script lang="ts" setup>
 import { useLanyardStore } from '~/stores/lanyard';
-import { useTippy } from 'vue-tippy';
 
 const store = useLanyardStore();
 const { public: config } = useRuntimeConfig();
-const locationRef = ref(null);
-
-useTippy(locationRef, {
-	followCursor: true,
-	animation: false,
+const { elementRef: locationRef } = useTooltip({
 	content: 'Open in Google Maps'
 });
 

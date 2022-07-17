@@ -1,24 +1,20 @@
 <script lang="ts" setup>
 import { DiscordActivity } from '~/types/lanyard';
-import { useTippy } from 'vue-tippy';
 
 interface Props {
 	data: DiscordActivity;
 }
 
-const { $getElapsedTime, $getDiscordAssetUrl } = useNuxtApp();
 const { data } = defineProps<Props>();
 
-let intervalUpdate: NodeJS.Timer | null = null;
-
-const elapsedTime = ref($getElapsedTime(new Date(data.timestamps.start).getTime()));
-const vscodeRef = ref<Element | null>(null);
-
-useTippy(vscodeRef, {
-	followCursor: true,
-	animation: false,
+const { $getElapsedTime, $getDiscordAssetUrl } = useNuxtApp();
+const { elementRef: vscodeRef } = useTooltip({
 	content: 'Go to Lanyard github repository'
 });
+
+const elapsedTime = ref($getElapsedTime(new Date(data.timestamps.start).getTime()));
+
+let intervalUpdate: NodeJS.Timer | null = null;
 
 tryOnMounted(() => {
 	if (intervalUpdate !== null) {

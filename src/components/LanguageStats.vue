@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useTippy } from 'vue-tippy';
-
 import { WakaTimeLanguage } from '~/types/wakatime';
 import { Language } from '~/types/language';
 
@@ -10,7 +8,6 @@ interface Props {
 }
 
 const { language, wakatime } = defineProps<Props>();
-const languageRef = ref<Element | null>(null);
 const languages = useWakaTimeLanguages();
 const lang = useLanguageFromWakaTimeStats(wakatime, language.wakatime);
 
@@ -42,9 +39,7 @@ const forHumans = (seconds: number) => {
 	return humanTime.length > 2 ? humanTime.slice(0, 2).join(' ') : humanTime.join(' ');
 };
 
-useTippy(languageRef, {
-	followCursor: true,
-	animation: false,
+const { elementRef: languageRef } = useTooltip({
 	content: unref(isValidLanguage) ? `${forHumans(lang.total_seconds)} past week` : null
 });
 </script>

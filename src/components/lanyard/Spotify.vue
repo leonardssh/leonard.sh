@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { DiscordSpotify } from '~/types/lanyard';
-import { useTippy } from 'vue-tippy';
 
 interface Props {
 	data: DiscordSpotify;
@@ -8,11 +7,7 @@ interface Props {
 
 const { data } = defineProps<Props>();
 
-const spotifyRef = ref<Element | null>(null);
-
-useTippy(spotifyRef, {
-	followCursor: true,
-	animation: false,
+const { elementRef: spotifyRef } = useTooltip({
 	content: 'Open current song in Spotify'
 });
 </script>
