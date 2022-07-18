@@ -2,11 +2,6 @@
 import { type Certification } from '~/types/certification';
 
 const certifications = await $fetch<Certification[]>('/api/certifications');
-
-const shortDate = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const formatDate = (month: number, year: number) => {
-	return `${shortDate[month - 1]} ${year}`;
-};
 </script>
 
 <template>
@@ -20,8 +15,8 @@ const formatDate = (month: number, year: number) => {
 						<a class="ml-1 font-normal text-slate-700" target="_blank" :href="issuingBy.url">{{ issuingBy.name }}</a>
 					</div>
 					<p class="text-sm font-medium text-slate-500 font-dm-sans">
-						Issued {{ formatDate(issueDate.month, issueDate.year) }} -
-						{{ expirationDate ? formatDate(expirationDate.month, expirationDate.year) : 'Present' }}
+						Issued {{ $formatDate(issueDate.month, issueDate.year) }} -
+						{{ expirationDate ? $formatDate(expirationDate.month, expirationDate.year) : 'Present' }}
 					</p>
 					<p class="mt-2 text-base font-normal text-slate-700 font-dm-sans">
 						{{ summary }}
