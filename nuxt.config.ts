@@ -12,7 +12,7 @@ const config: NuxtConfig = {
 
 	typescript: {
 		shim: false,
-		typeCheck: true
+		typeCheck: false
 	},
 
 	srcDir: 'src',
