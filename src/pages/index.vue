@@ -24,6 +24,7 @@ watch(lanyard, () => {
 	<Side v-motion-slide-visible-right layout="right">
 		<About />
 		<Skills />
+		<Languages />
 		<Doing />
 		<MadeWithTailwind />
 	</Side>
