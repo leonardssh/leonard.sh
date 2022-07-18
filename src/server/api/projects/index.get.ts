@@ -13,8 +13,6 @@ const getRepository = async ([owner, name]: [string, string], token: string): Pr
 
 const cache = new InMemoryCache<IProject[]>();
 
-//
-
 export default defineEventHandler(async () => {
 	if (cache.get('projects') && !cache.expired('projects')) {
 		return cache.get('projects');
