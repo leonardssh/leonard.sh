@@ -25,7 +25,7 @@ watch(lanyard, () => {
 		<About />
 		<Skills />
 		<Languages />
-		<Doing />
+		<!-- <Doing /> -->
 		<MadeWithTailwind />
 	</Side>
 </template>
