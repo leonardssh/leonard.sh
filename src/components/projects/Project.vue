@@ -27,11 +27,19 @@ const { project } = defineProps<Props>();
 				></span>
 				{{ project.language }}
 			</div>
-			<div class="inline-block font-medium cursor-pointer hover:text-blue-400" @click="$openUrlInNewTab(project.stargazers_url)">
+			<div
+				v-if="project.stargazers_count > 0"
+				class="inline-block font-medium cursor-pointer hover:text-blue-400"
+				@click="$openUrlInNewTab(project.stargazers_url)"
+			>
 				<nuxt-icon class="inline-block overflow-visible text-sm top-[1px] relative align-text-bottom" name="github-star"></nuxt-icon>
 				{{ project.stargazers_count }}
 			</div>
-			<div class="inline-block font-medium cursor-pointer hover:text-blue-400" @click="$openUrlInNewTab(project.forks_url)">
+			<div
+				v-if="project.forks_count > 0"
+				class="inline-block font-medium cursor-pointer hover:text-blue-400"
+				@click="$openUrlInNewTab(project.forks_url)"
+			>
 				<nuxt-icon class="inline-block overflow-visible text-sm top-[1px] relative align-text-bottom" name="github-fork"></nuxt-icon>
 				{{ project.forks_count }}
 			</div>
