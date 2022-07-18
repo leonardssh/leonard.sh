@@ -44,6 +44,12 @@ const getExternalAsset = (link: string) => {
 const getDiscordAssetUrl = (image: string, appId: string) =>
 	image.startsWith('mp:external') ? getExternalAsset(image) : `https://cdn.discordapp.com/app-assets/${appId}/${image}`;
 
+const shortDate = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const formatDate = (month: number, year: number) => {
+	return `${shortDate[month - 1]} ${year}`;
+};
+
 export default defineNuxtPlugin(() => {
 	return {
 		provide: {
@@ -52,7 +58,8 @@ export default defineNuxtPlugin(() => {
 			openUrlInNewTab,
 			getDiscordAssetUrl,
 			getExternalAsset,
-			discordStatusName
+			discordStatusName,
+			formatDate
 		}
 	};
 });
