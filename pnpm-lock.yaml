@@ -649,11 +649,11 @@ packages:
         resolution: { integrity: sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA== }
         dev: true
 
-    /@nuxt/kit-edge/3.0.0-rc.5-27632091.f5fd58e:
-        resolution: { integrity: sha512-cCo16qmk/FRLB0LBTDVzRusBFMYPKAJziUq/4Fe0YTBSkqHnUalP7hcZ5spndnptj2LjlhRf3Zp7V/o8tuvztw== }
+    /@nuxt/kit-edge/3.0.0-rc.6-27635653.88f4525:
+        resolution: { integrity: sha512-FKolQGk5YfjAw1WOExBjdVESW5n2mvO5cxuN8S5Ivx/7XMauuqdmE20Lk8fwWLOr83ziJviDyCIUGl4mDVq32A== }
         engines: { node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0 }
         dependencies:
-            '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.5-27632091.f5fd58e
+            '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.6-27635653.88f4525
             c12: 0.2.8
             consola: 2.15.3
             defu: 6.0.0
@@ -798,8 +798,8 @@ packages:
             - webpack
         dev: true
 
-    /@nuxt/schema-edge/3.0.0-rc.5-27632091.f5fd58e:
-        resolution: { integrity: sha512-T4mV8wWf42kOgZDQO0+WcBHQ9RunM0rSy60Ao1J81tR6UNlbvJ/PSLoW7Wq2RvSfImQhnwEqigcgdzTFGVUVIQ== }
+    /@nuxt/schema-edge/3.0.0-rc.6-27635653.88f4525:
+        resolution: { integrity: sha512-gKInepH+Nhg0p2Cxlc1CWrYv/qM3UoYOQUgXGnTgkkh4RtLEHNGP3op+LbkZ1847Z+p368vb6J9PMPghnP5a4A== }
         engines: { node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0 }
         dependencies:
             c12: 0.2.8
@@ -4694,7 +4694,7 @@ packages:
     /nuxt-icons/2.0.1:
         resolution: { integrity: sha512-V42PZF0DYUnff6KuFLnbzd09/Q4q6863dmJn6FZ5sPysIix9I2Jm4SMQhKQl2ODKjvsHDPtcTw3kQ0JIwPbXXQ== }
         dependencies:
-            '@nuxt/kit': /@nuxt/kit-edge/3.0.0-rc.5-27632091.f5fd58e
+            '@nuxt/kit': /@nuxt/kit-edge/3.0.0-rc.6-27635653.88f4525
         transitivePeerDependencies:
             - esbuild
             - rollup

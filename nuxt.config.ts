@@ -2,8 +2,10 @@ import { defineNuxtConfig, type NuxtConfig } from 'nuxt';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const { WAKATIME_KEY } = process.env;
+const { WAKATIME_KEY, GITHUB_ACCESS_TOKEN } = process.env;
+
 const LANYARD_WEBSOCKET_URL = 'wss://api.lanyard.rest/socket';
+const GITHUB_API_URL = 'https://api.github.com';
 
 const config: NuxtConfig = {
 	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@vueuse/motion/nuxt', 'nuxt-icons'],
@@ -38,11 +40,13 @@ const config: NuxtConfig = {
 
 	runtimeConfig: {
 		app: {
-			wakaTimeKey: WAKATIME_KEY
+			wakaTimeKey: WAKATIME_KEY,
+			githubAccessToken: GITHUB_ACCESS_TOKEN
 		},
 		public: {
 			discordId: '290131759159443457',
 			lanyardWebsocketUrl: LANYARD_WEBSOCKET_URL,
+			githubApiUrl: GITHUB_API_URL,
 			wakaTimeUser: 'leonard',
 			location: 'Rotterdam — South Holland, The Netherlands',
 			devMode: isDev
