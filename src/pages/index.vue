@@ -16,7 +16,7 @@ watch(lanyard, () => {
 <template>
 	<Side v-motion-slide-bottom :delay="900" layout="left">
 		<Me />
-		<Projects />
+		<!-- <Projects /> -->
 		<Experience />
 		<Education />
 		<Certifications />
