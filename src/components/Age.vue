@@ -10,5 +10,5 @@ const { elementRef: ageRef } = useTooltip({
 </script>
 
 <template>
-	<span ref="ageRef" class="cursor-pointer border-b pb-[0.5px] border-dotted"> {{ age() }} y.o </span>
+	<span ref="ageRef" class="cursor-default border-b pb-[0.5px] border-dotted"> {{ age() }} y.o </span>
 </template>
