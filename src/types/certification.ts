@@ -12,4 +12,6 @@ export interface Certification {
 		year: number;
 		month: number;
 	};
+	summary?: string;
+	highlights?: string[];
 }

@@ -15,15 +15,12 @@ const location = computed(() => store.kv.location ?? config.location);
 		<h4 class="pt-10 pb-2 text-base font-medium text-slate-400">About</h4>
 		<div class="space-y-5">
 			<p>
-				My name is
-				<Link url="https://en.wikipedia.org/wiki/Narcissus_(mythology)">Narcis</Link>, known as
-				<Link url="https://en.wikipedia.org/wiki/Leonard">Leonard</Link>
-				everywhere, and I'm an <Age /> full-stack web developer based in The Netherlands, currently pursuing full-stack web development to
-				create stunning user experiences on the front-end, and scalable and secure infrastructure on the backend.
+				My name is <Link url="https://en.wikipedia.org/wiki/Narcissus_(mythology)">Narcis</Link> and I'm a full-stack developer who relocated
+				recently to The Netherlands. I'm looking for new challenges in my career therefore I'm currently looking for hire.
 			</p>
 			<p>
-				Thanks to my strategic and technical skills, I can manage web projects from A to Z. At ease from the conceptualization to the
-				technical details of a website, I'm a real Swiss army knife who knows the web like the back of his hand.
+				I'm well versed in the art of web development. I can manage to do front-end and back-end with relative ease from the point of
+				conceptualization to the point of delivery.
 			</p>
 		</div>
 		<a
