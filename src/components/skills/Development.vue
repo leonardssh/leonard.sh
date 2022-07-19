@@ -30,7 +30,7 @@ const { data: wakatime, pending } = useLazyFetch<WakaTimeLanguage[]>(`/api/wakat
 
 <template>
 	<div class="pb-5 text-base font-medium text-slate-400 font-inter">
-		Tech Stack
+		Skillset
 		<ul class="text-sm font-medium text-white list-disc">
 			<li v-for="({ skills }, key) of groupedSkills" :key="key" class="space-x-2">
 				<template v-if="pending">
