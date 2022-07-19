@@ -1,22 +1,25 @@
 <script lang="ts" setup>
-import { Experience } from '~/types/experience';
+import { useResumeStore } from '~/stores';
 
-const experiences = await $fetch<Experience[]>('/api/experience');
+const {
+	resume: { work }
+} = useResumeStore();
 </script>
 
 <template>
-	<div class="mt-5" v-if="Object.keys(experiences).length">
+	<div class="mt-5" v-if="Object.keys(work).length">
 		<div class="pb-5 text-lg font-normal text-slate-500 font-dm-sans">Experience</div>
 		<div class="grid grid-cols-1 gap-4">
-			<div v-for="({ company, position, start, end, website, highlights, summary }, key) in experiences" :key="key">
+			<div v-for="({ name, position, startDate, endDate, summary, highlights, url }, key) in work" :key="key">
 				<div class="flex flex-row items-baseline justify-start text-base font-inter">
-					<p class="font-medium border-b border-dashed cursor-pointer border-black/50 font-inter" @click="$openUrlInNewTab(website)">
-						{{ company }},
+					<p class="font-medium border-b border-dashed cursor-pointer border-black/50 font-inter" @click="$openUrlInNewTab(url)">
+						{{ name }},
 					</p>
 					<p class="ml-1 font-normal text-slate-700">{{ position }}</p>
 				</div>
 				<h4 class="text-sm font-medium text-slate-500 font-dm-sans">
-					{{ $formatDate(start.month, start.year) }} - {{ end ? $formatDate(end.month, end.year) : 'Present' }}
+					{{ startDate ? $formatDate(startDate.month, startDate.year) : 'Unknown' }} -
+					{{ endDate ? $formatDate(endDate.month, endDate.year) : 'Present' }}
 				</h4>
 				<p v-if="summary" class="mt-2 text-base font-normal text-slate-700 font-inter">
 					{{ summary }}

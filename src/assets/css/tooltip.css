@@ -8,7 +8,7 @@
 
 .tippy-box {
 	transition-property: transform, visibility, opacity;
-	@apply relative text-sm font-medium whitespace-normal bg-white rounded-md text-black/80 font-inter outline-0;
+	@apply relative text-sm font-medium whitespace-normal bg-white rounded-md shadow-sm text-black/80 font-inter outline-0 shadow-black/50;
 }
 
 .tippy-box[data-placement^='top'] > .tippy-arrow {

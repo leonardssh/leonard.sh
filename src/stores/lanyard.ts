@@ -1,7 +1,8 @@
 import { defineStore, acceptHMRUpdate } from 'pinia';
-import { DiscordActivity, DiscordSpotify, DiscordStatus, LanyardKV } from '~/types/lanyard';
 
-export const useLanyardStore = defineStore('counter', {
+import type { DiscordActivity, DiscordSpotify, DiscordStatus, LanyardKV } from '~/types/lanyard';
+
+export const useLanyardStore = defineStore('lanyard', {
 	state: () => ({ status: 'offline', activity: null, spotify: null, kv: {} as LanyardKV }),
 	actions: {
 		setStatus(status: DiscordStatus) {

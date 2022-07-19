@@ -1,23 +1,22 @@
 <script lang="ts" setup>
-import { type Certification } from '~/types/certification';
+import { useResumeStore } from '~/stores';
 
-const certifications = await $fetch<Certification[]>('/api/certifications');
+const {
+	resume: { certificates }
+} = useResumeStore();
 </script>
 
 <template>
-	<template v-if="Object.keys(certifications).length">
+	<template v-if="Object.keys(certificates).length">
 		<div class="mt-5">
-			<div class="pb-5 text-lg font-normal text-slate-500 font-dm-sans">Certifications</div>
+			<div class="pb-5 text-lg font-normal text-slate-500 font-dm-sans">Certificates</div>
 			<div class="grid grid-cols-1 gap-4">
-				<div v-for="({ area, issuingBy, issueDate, expirationDate, summary, highlights }, key) in certifications" :key="key">
+				<div v-for="({ name, url, date, issuer, summary, highlights }, key) in certificates" :key="key">
 					<div class="flex flex-row items-baseline justify-start text-base font-inter">
-						<p class="font-medium font-inter">{{ area }},</p>
-						<a class="ml-1 font-normal text-slate-700" target="_blank" :href="issuingBy.url">{{ issuingBy.name }}</a>
+						<p class="font-medium font-inter">{{ name }},</p>
+						<a class="ml-1 font-normal text-slate-700" target="_blank" :href="url">{{ issuer }}</a>
 					</div>
-					<p class="text-sm font-medium text-slate-500 font-dm-sans">
-						Issued {{ $formatDate(issueDate.month, issueDate.year) }} -
-						{{ expirationDate ? $formatDate(expirationDate.month, expirationDate.year) : 'Present' }}
-					</p>
+					<p class="text-sm font-medium text-slate-500 font-dm-sans">Issued {{ $formatDate(date.month, date.year) }}</p>
 					<p class="mt-2 text-base font-normal text-slate-700 font-dm-sans">
 						{{ summary }}
 					</p>

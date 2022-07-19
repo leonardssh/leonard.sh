@@ -1,20 +1,27 @@
 <script lang="ts" setup>
-import { useLanyardStore } from '~/stores/lanyard';
-import { type LanyardKV } from '~/types/lanyard';
+import { useLanyardStore, useResumeStore } from '~/stores';
 
-const store = useLanyardStore();
+import type { LanyardKV } from '~/types/lanyard';
+import type { Resume } from '~/types/resume';
+
+const lanyardStore = useLanyardStore();
+const resumeStore = useResumeStore();
+
 const lanyard = useLanyard();
 
+const resume = await $fetch<Resume>('/api/resume');
+resumeStore.setResume(resume);
+
 watch(lanyard, () => {
-	store.setStatus(lanyard.value.discord_status ?? 'offline');
-	store.setActivity(lanyard.value.activities.filter((activity) => activity.type === 0)[0] ?? null);
-	store.setSpotify(lanyard.value.spotify ?? null);
-	store.setKV(lanyard.value.kv ?? ({} as LanyardKV));
+	lanyardStore.setStatus(lanyard.value.discord_status ?? 'offline');
+	lanyardStore.setActivity(lanyard.value.activities.filter((activity) => activity.type === 0)[0] ?? null);
+	lanyardStore.setSpotify(lanyard.value.spotify ?? null);
+	lanyardStore.setKV(lanyard.value.kv ?? ({} as LanyardKV));
 });
 </script>
 
 <template>
-	<Side v-motion-slide-bottom :delay="900" layout="left">
+	<Side v-motion-slide-bottom :delay="1000" layout="left">
 		<Me />
 		<!-- <Projects /> -->
 		<Experience />
@@ -22,7 +29,7 @@ watch(lanyard, () => {
 		<Certifications />
 	</Side>
 
-	<Side v-motion-slide-visible-right layout="right">
+	<Side v-motion-slide-right :delay="250" layout="right">
 		<About />
 		<Skills />
 		<Languages />

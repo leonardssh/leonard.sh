@@ -1,13 +1,16 @@
 <script lang="ts" setup>
-const interests = await $fetch<{ title: string; skills: string[] }>('/api/interests');
+import { useResumeStore } from '~/stores';
+
+const { resume } = useResumeStore();
+const [{ name, keywords }] = resume.skills.filter((skill) => skill.name.includes('Interests'));
 </script>
 
 <template>
 	<SkillsContainer>
-		<template #title>{{ interests.title }}</template>
+		<template #title>{{ name }}</template>
 		<template #list>
-			<li v-for="(skill, key) of interests.skills" :key="key" class="space-x-2">
-				{{ skill }}
+			<li v-for="(keyword, key) of keywords" :key="key" class="space-x-2">
+				{{ (keyword as any).name }}
 			</li>
 		</template>
 	</SkillsContainer>
