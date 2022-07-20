@@ -6,103 +6,17 @@
 
 <script lang="ts" setup>
 import { provide } from 'vue';
-import { description, icon, image, title } from '~/constants/head';
+import head from '~/constants/head';
 
 import type { Resume } from './types/resume';
+
+useHead(head);
 
 const lanyard = useLanyard();
 provide('lanyard', readonly(lanyard));
 
 const resume = await $fetch<Resume>('/api/resume');
 provide('resume', readonly(resume));
-
-useHead({
-	htmlAttrs: {
-		class: "bg-[url('/images/left-bg.jpg')]",
-		lang: 'en'
-	},
-	title,
-	charset: 'utf-8',
-	viewport: 'width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, viewport-fit=cover',
-	link: [
-		{
-			rel: 'icon',
-			type: 'image/x-icon',
-			href: icon
-		}
-	],
-	meta: [
-		{
-			hid: 'description',
-			name: 'description',
-			content: description
-		},
-		/**
-		 * Twitter
-		 */
-		{
-			hid: 'twitter:card',
-			name: 'twitter:card',
-			content: 'summary'
-		},
-		{
-			hid: 'twitter:site',
-			name: 'twitter:site',
-			content: '@leonardssh22'
-		},
-		{
-			hid: 'twitter:creator',
-			name: 'twitter:creator',
-			content: '@leonardssh22'
-		},
-		{
-			hid: 'twitter:title',
-			name: 'twitter:title',
-			content: title
-		},
-		{
-			hid: 'twitter:description',
-			name: 'twitter:description',
-			content: description
-		},
-		{
-			hid: 'twitter:image',
-			name: 'twitter:image',
-			content: image
-		},
-		/**
-		 * Open-Graph
-		 */
-		{
-			hid: 'og:type',
-			name: 'og:type',
-			content: 'website'
-		},
-		{
-			hid: 'og:site_name',
-			name: 'og:site_name',
-			content: title
-		},
-		{
-			hid: 'og:description',
-			name: 'og:description',
-			content: description
-		},
-		{
-			hid: 'og:image',
-			name: 'og:image',
-			content: image
-		},
-		/**
-		 * Others
-		 */
-		{
-			hid: 'theme-color',
-			name: 'theme-color',
-			content: '#121a27'
-		}
-	]
-});
 </script>
 
 <style lang="scss">
