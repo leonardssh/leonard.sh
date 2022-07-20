@@ -94,7 +94,7 @@ useHead({
 		{
 			hid: 'theme-color',
 			name: 'theme-color',
-			content: '#93c5fd'
+			content: '#121a27'
 		}
 	]
 });
