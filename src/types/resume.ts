@@ -10,6 +10,7 @@ export interface Basics {
 	summary: string;
 	url: string;
 	email: string;
+	image: string;
 	location: {
 		address: string;
 		postalCode: string;
