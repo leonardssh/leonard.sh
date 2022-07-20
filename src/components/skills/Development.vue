@@ -1,21 +1,16 @@
 <script lang="ts" setup>
-import { useResumeStore } from '~/stores';
-
+import { inject } from 'vue';
 import type { WakaTimeLanguage } from '~/types/wakatime';
-import { Skill } from '~/types/resume';
+import type { Resume, Skill } from '~/types/resume';
 
-const {
-	public: { wakaTimeUser }
-} = useRuntimeConfig();
+const resume = inject<Readonly<Resume>>('resume');
 
-const { resume } = useResumeStore();
-
-const [[frontEnd], [backEnd]] = [
-	resume.skills.filter((skill) => skill.name.includes('Front-End')),
-	resume.skills.filter((skill) => skill.name.includes('Back-End'))
+const [frontEnd, backEnd] = [
+	resume.skills.filter((skill) => skill.name.includes('Front-End'))[0].keywords,
+	resume.skills.filter((skill) => skill.name.includes('Back-End'))[0].keywords
 ];
 
-const skills = [...Object.values(frontEnd.keywords), ...Object.values(backEnd.keywords)] as unknown as Skill['keywords'][];
+const skills = [...Object.values(frontEnd!), ...Object.values(backEnd!)] as unknown as Skill['keywords'][];
 
 const uniqueGroups = [...new Set(skills.map((skill) => skill.group))];
 const groupedSkills = uniqueGroups.map((group) => {

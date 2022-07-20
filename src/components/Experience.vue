@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-import { useResumeStore } from '~/stores';
+import { inject } from 'vue';
+import type { Resume } from '~/types/resume';
 
-const {
-	resume: { work }
-} = useResumeStore();
+const { work } = inject<Readonly<Resume>>('resume');
 </script>
 
 <template>
-	<div class="mt-5" v-if="Object.keys(work).length">
+	<div class="mt-5" v-if="work.length">
 		<div class="pb-5 text-lg font-normal text-slate-500 font-dm-sans">Experience</div>
 		<div class="grid grid-cols-1 gap-4">
 			<div v-for="({ name, position, startDate, endDate, summary, highlights, url }, key) in work" :key="key">

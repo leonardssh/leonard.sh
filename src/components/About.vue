@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { useLanyardStore } from '~/stores/lanyard';
-import { useResumeStore } from '~/stores';
+import { inject, type Ref } from 'vue';
+import type { Resume } from '~/types/resume';
+import { LanyardData } from '../types/lanyard';
 
-const { kv } = useLanyardStore();
-const {
-	resume: { basics }
-} = useResumeStore();
+const { basics } = inject<Readonly<Resume>>('resume');
+const lanyard = inject<Readonly<Ref<LanyardData>>>('lanyard');
 
 const { public: config } = useRuntimeConfig();
 
@@ -13,11 +12,11 @@ const { elementRef: locationRef } = useTooltip({
 	content: 'Open in Google Maps'
 });
 
-const location = computed(() => kv.location ?? config.location);
+const location = computed(() => unref(lanyard).kv.location ?? config.location);
 </script>
 
 <template>
-	<div class="font-inter">
+	<div class="font-inter" v-if="basics">
 		<h4 class="pt-10 pb-2 text-base font-medium text-slate-400">About</h4>
 		<div class="space-y-5">
 			<template v-for="summary of basics.summary.split('\n\n')">

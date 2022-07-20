@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { useResumeStore } from '~/stores';
+import { inject } from 'vue';
+import type { Resume } from '~/types/resume';
 
-const { resume } = useResumeStore();
-const [{ name, keywords }] = resume.skills.filter((skill) => skill.name.includes('Interests'));
+const { skills } = inject<Readonly<Resume>>('resume');
+const [{ name, keywords }] = skills.filter((skill) => skill.name.includes('Interests'));
 </script>
 
 <template>

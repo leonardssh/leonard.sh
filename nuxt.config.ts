@@ -19,7 +19,7 @@ const config: NuxtConfig = {
   */
 	ssr: !isDev,
 
-	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@vueuse/motion/nuxt', 'nuxt-icons'],
+	modules: ['@vueuse/nuxt', '@vueuse/motion/nuxt', 'nuxt-icons'],
 	typescript: {
 		shim: false,
 		typeCheck: false

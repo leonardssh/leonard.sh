@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-import { useResumeStore } from '~/stores';
+import { inject } from 'vue';
+import type { Resume } from '~/types/resume';
 
-const {
-	resume: { languages }
-} = useResumeStore();
+const { languages } = inject<Readonly<Resume>>('resume');
 </script>
 
 <template>
-	<div class="font-inter font-sm">
+	<div class="font-inter font-sm" v-if="languages.length">
 		<h4 class="mb-2 text-base font-medium text-slate-400">Languages</h4>
 		<template v-for="({ language, fluency }, key) of languages" :key="key">
 			<div class="inline-block">

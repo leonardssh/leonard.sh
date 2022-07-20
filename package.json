@@ -44,9 +44,7 @@
 		"vue-eslint-parser": "^9.0.3"
 	},
 	"dependencies": {
-		"@pinia/nuxt": "^0.3.0",
 		"nprogress": "^0.2.0",
-		"pinia": "^2.0.16",
 		"vue": "^3.2.37",
 		"vue-tippy": "6.0.0-alpha.62"
 	},

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { WakaTimeLanguage } from '~/types/wakatime';
-import { Skill } from '~/types/resume';
+import type { WakaTimeLanguage } from '~/types/wakatime';
+import type { Skill } from '~/types/resume';
 import { formatTime } from '~/helpers';
 
 interface Props {

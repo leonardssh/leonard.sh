@@ -1,15 +1,20 @@
 <template>
-	<div class="flex flex-col overflow-hidden lg:flex-row bg-effect">
+	<div v-if="lanyard && resume" class="flex flex-col overflow-hidden lg:flex-row bg-effect">
 		<NuxtPage />
 	</div>
 </template>
 
 <script lang="ts" setup>
-const title = 'Narcis B. | Resume';
-const image = 'https://leonard.sh/images/og-image.png';
-const icon = 'https://leonard.sh/images/icon.ico';
-const description =
-	"Full-Stack Web Developer, currently looking for new challenges in my career therefore I'm currently looking for hire. Check my resume for more information on my skills and personal projects";
+import { provide } from 'vue';
+import { description, icon, image, title } from '~/constants/head';
+
+import type { Resume } from './types/resume';
+
+const lanyard = useLanyard();
+provide('lanyard', readonly(lanyard));
+
+const resume = await $fetch<Resume>('/api/resume');
+provide('resume', readonly(resume));
 
 useHead({
 	htmlAttrs: {

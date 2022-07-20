@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { useLanyardStore } from '~/stores/lanyard';
+import { inject, Ref } from 'vue';
+import { LanyardData } from '../types/lanyard';
 
-const store = useLanyardStore();
+const lanyard = inject<Readonly<Ref<LanyardData>>>('lanyard');
 
 const colorObject = {
 	idle: 'bg-yellow-400',
@@ -10,7 +11,7 @@ const colorObject = {
 	offline: 'bg-slate-400'
 };
 
-const color = computed(() => colorObject[store.status]);
+const color = computed(() => colorObject[unref(lanyard).discord_status]);
 </script>
 
 <template>

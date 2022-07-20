@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { useResumeStore } from '~/stores';
+import { inject } from 'vue';
+import type { Resume } from '~/types/resume';
 
-const {
-	resume: { basics }
-} = useResumeStore();
+const { basics } = inject<Readonly<Resume>>('resume');
 
 const { elementRef: meRef } = useTooltip({
 	content: 'Hey, this is me!'
