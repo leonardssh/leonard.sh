@@ -8,13 +8,6 @@ const LANYARD_WEBSOCKET_URL = 'wss://api.lanyard.rest/socket';
 const GITHUB_API_URL = 'https://api.github.com';
 
 const config: NuxtConfig = {
-	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@vueuse/motion/nuxt', 'nuxt-icons'],
-
-	typescript: {
-		shim: false,
-		typeCheck: false
-	},
-
 	srcDir: 'src',
 	target: 'static',
 
@@ -26,6 +19,14 @@ const config: NuxtConfig = {
   */
 	ssr: !isDev,
 
+	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@vueuse/motion/nuxt', 'nuxt-icons'],
+	typescript: {
+		shim: false,
+		typeCheck: false
+	},
+	loading: {
+		color: '#000'
+	},
 	css: ['~/assets/css/fonts.css', '~/assets/css/tailwind.css', '~/assets/css/global.css', '~/assets/css/tooltip.css'],
 	build: {
 		postcss: {
@@ -37,7 +38,6 @@ const config: NuxtConfig = {
 			}
 		}
 	},
-
 	runtimeConfig: {
 		app: {
 			wakaTimeKey: WAKATIME_KEY,
