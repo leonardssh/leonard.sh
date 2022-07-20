@@ -1,9 +1,3 @@
-<template>
-	<div v-if="lanyard && resume" class="flex flex-col overflow-hidden lg:flex-row bg-effect">
-		<NuxtPage />
-	</div>
-</template>
-
 <script lang="ts" setup>
 import { provide } from 'vue';
 import head from '~/constants/head';
@@ -18,6 +12,12 @@ provide('lanyard', readonly(lanyard));
 const resume = await $fetch<Resume>('/api/resume');
 provide('resume', readonly(resume));
 </script>
+
+<template>
+	<div v-if="lanyard && resume" class="flex flex-col overflow-hidden lg:flex-row bg-effect">
+		<NuxtPage />
+	</div>
+</template>
 
 <style lang="scss">
 .bg-effect {
