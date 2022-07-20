@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 const title = 'Narcis B. | Resume';
 const image = 'https://leonard.sh/images/og-image.png';
+const icon = 'https://leonard.sh/images/icon.ico';
 const description =
 	"Full-Stack Web Developer, currently looking for new challenges in my career therefore I'm currently looking for hire. Check my resume for more information on my skills and personal projects";
 
@@ -18,6 +19,13 @@ useHead({
 	title,
 	charset: 'utf-8',
 	viewport: 'width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, viewport-fit=cover',
+	link: [
+		{
+			rel: 'icon',
+			type: 'image/x-icon',
+			href: icon
+		}
+	],
 	meta: [
 		{
 			hid: 'description',
