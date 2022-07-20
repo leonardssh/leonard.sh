@@ -25,6 +25,7 @@
 		"@vueuse/motion": "2.0.0-beta.18",
 		"@vueuse/nuxt": "^8.9.4",
 		"autoprefixer": "^10.4.7",
+		"axios": "^0.27.2",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.20.0",
 		"eslint-config-prettier": "^8.5.0",

@@ -13,6 +13,7 @@ specifiers:
     '@vueuse/motion': 2.0.0-beta.18
     '@vueuse/nuxt': ^8.9.4
     autoprefixer: ^10.4.7
+    axios: ^0.27.2
     cz-conventional-changelog: ^3.3.0
     eslint: ^8.20.0
     eslint-config-prettier: ^8.5.0
@@ -53,6 +54,7 @@ devDependencies:
     '@vueuse/motion': 2.0.0-beta.18_6jvzu3maxdcrfrio54gfs7q6oe
     '@vueuse/nuxt': 8.9.4_vue@3.2.37
     autoprefixer: 10.4.7_postcss@8.4.14
+    axios: 0.27.2
     cz-conventional-changelog: 3.3.0
     eslint: 8.20.0
     eslint-config-prettier: 8.5.0_eslint@8.20.0
@@ -1735,6 +1737,10 @@ packages:
         resolution: { integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ== }
         dev: true
 
+    /asynckit/0.4.0:
+        resolution: { integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q== }
+        dev: true
+
     /autoprefixer/10.4.7_postcss@8.4.14:
         resolution: { integrity: sha512-ypHju4Y2Oav95SipEcCcI5J7CGPuvz8oat7sUtYj3ClK44bldfvtvcxK6IEK++7rqB7YchDGzweZIBG+SD0ZAA== }
         engines: { node: ^10 || ^12 || >=14 }
@@ -1749,6 +1755,15 @@ packages:
             picocolors: 1.0.0
             postcss: 8.4.14
             postcss-value-parser: 4.2.0
+        dev: true
+
+    /axios/0.27.2:
+        resolution: { integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ== }
+        dependencies:
+            follow-redirects: 1.15.1
+            form-data: 4.0.0
+        transitivePeerDependencies:
+            - debug
         dev: true
 
     /balanced-match/1.0.2:
@@ -2065,6 +2080,13 @@ packages:
 
     /colorette/2.0.19:
         resolution: { integrity: sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ== }
+        dev: true
+
+    /combined-stream/1.0.8:
+        resolution: { integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg== }
+        engines: { node: '>= 0.8' }
+        dependencies:
+            delayed-stream: 1.0.0
         dev: true
 
     /commander/2.20.3:
@@ -2470,6 +2492,11 @@ packages:
 
     /defu/6.0.0:
         resolution: { integrity: sha512-t2MZGLf1V2rV4VBZbWIaXKdX/mUcYW0n2znQZoADBkGGxYL8EWqCuCZBmJPJ/Yy9fofJkyuuSuo5GSwo0XdEgw== }
+
+    /delayed-stream/1.0.0:
+        resolution: { integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ== }
+        engines: { node: '>=0.4.0' }
+        dev: true
 
     /delegates/1.0.0:
         resolution: { integrity: sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ== }
@@ -3286,6 +3313,15 @@ packages:
         peerDependenciesMeta:
             debug:
                 optional: true
+        dev: true
+
+    /form-data/4.0.0:
+        resolution: { integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww== }
+        engines: { node: '>= 6' }
+        dependencies:
+            asynckit: 0.4.0
+            combined-stream: 1.0.8
+            mime-types: 2.1.35
         dev: true
 
     /formdata-polyfill/4.0.10:
@@ -4319,6 +4355,18 @@ packages:
         dependencies:
             braces: 3.0.2
             picomatch: 2.3.1
+
+    /mime-db/1.52.0:
+        resolution: { integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg== }
+        engines: { node: '>= 0.6' }
+        dev: true
+
+    /mime-types/2.1.35:
+        resolution: { integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw== }
+        engines: { node: '>= 0.6' }
+        dependencies:
+            mime-db: 1.52.0
+        dev: true
 
     /mime/1.6.0:
         resolution: { integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg== }
