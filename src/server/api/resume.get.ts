@@ -11,17 +11,16 @@ const getResumeDataFromAPI = async (): Promise<Resume> => {
 };
 
 const getResumeData = async (): Promise<Resume> => {
-	const response = await getResumeDataFromAPI();
-	return response;
-};
-
-export default defineEventHandler<Resume>(async () => {
 	if (cache.get('resume') && !cache.expired('resume')) {
 		return cache.get('resume');
 	}
 
-	const response = await getResumeData();
+	const response = await getResumeDataFromAPI();
 	cache.set('resume', response);
 
 	return response;
+};
+
+export default defineEventHandler<Resume>(async () => {
+	return getResumeData();
 });
