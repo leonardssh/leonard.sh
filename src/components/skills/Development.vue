@@ -25,7 +25,7 @@ const groupedSkills = uniqueGroups.map((group) => {
 	};
 });
 
-const { data: wakatime, pending } = useLazyFetch<WakaTimeLanguage[]>(`/api/wakatime/${wakaTimeUser}`, { key: 'wakatime' });
+const { data: wakatime, pending } = useLazyFetch<WakaTimeLanguage[]>(`/api/wakatime`, { key: 'wakatime' });
 </script>
 
 <template>
