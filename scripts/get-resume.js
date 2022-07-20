@@ -9,7 +9,7 @@ async function getResumePDF() {
 		url: RESUME_URL,
 		responseType: 'stream'
 	}).then((response) => {
-		response.data.pipe(fs.createWriteStream('./dist/resume.pdf'));
+		response.data.pipe(fs.createWriteStream('./dist/public/resume.pdf'));
 	});
 }
 
